@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req,res){
-  res.render('index')
+  //res.render('index')
 });
 require('./routes')(app);
 
@@ -42,9 +42,9 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.get('/', function(req, res, next) {
-
-  res.status(200).json({
+app.get('/user_details', function(req, response, next) {
+console.log('-----request----')
+  response.status(200).json({
     name:'foo'
   })
 
